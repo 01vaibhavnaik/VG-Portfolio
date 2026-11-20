@@ -404,8 +404,15 @@ button {
 }
 
 @keyframes heroVisualReveal {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .section-title {
@@ -754,15 +761,67 @@ footer>a:last-child:hover {
         max-width: 350px;
     }
 
-    .visual-photo-panel {
-        height: 330px;
-    }
+    
 
-    .visual-frame .visual-tagline {
-        font-size: 22px;
-        bottom: 18px;
-        left: 18px;
+    
+/* Circular Hero Image - Same as Software Engineer Portfolio */
+
+.visual-photo-panel {
+    position: relative;
+    height: 390px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    overflow: hidden;
+    background: var(--panel);
+}
+
+.photo-circle {
+    width: 265px;
+    height: 265px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--yellow);
+    box-shadow: 0 15px 55px #0007;
+}
+
+.photo-circle .hero-photo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border: none;
+    border-radius: 50%;
+}
+
+/* Keep tagline below the circular image */
+.visual-frame .visual-tagline {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: var(--white);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-shadow: none;
+}
+
+@media (max-width: 480px) {
+    .photo-circle {
+        width: min(265px, 80%);
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
+}
+
 
     .visual-frame-head,
     .visual-frame-bottom {
@@ -794,10 +853,6 @@ footer>a:last-child:hover {
 
 
 }
-@media (prefers-reduced-motion: reduce) {
-    .hero-visual.reveal {
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
-}
+
+
+
