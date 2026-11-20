@@ -854,5 +854,15 @@ footer>a:last-child:hover {
 
 }
 
+/* Alternating section background colours */
+
+main > section:nth-of-type(odd) {
+    background: #171a1f;
+}
+
+main > section:nth-of-type(even) {
+    background: #1c2026;
+}
+
 
 
